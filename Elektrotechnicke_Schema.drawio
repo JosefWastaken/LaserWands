@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.3.0">
+  <diagram name="Page-1" id="7e0a89b8-554c-2b80-1dc8-d5c74ca68de4">
+    <mxGraphModel dx="1379" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6szxlBy-H3JRrQPXt5Hy-2" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="780" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="6szxlBy-H3JRrQPXt5Hy-3" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="780" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="6szxlBy-H3JRrQPXt5Hy-4" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="780" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="6szxlBy-H3JRrQPXt5Hy-10" edge="1" parent="1" style="endArrow=none;html=1;strokeWidth=1;rounded=0;" value="">
+          <mxGeometry relative="1" width="100" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="340" />
+            </Array>
+            <mxPoint x="880" y="340" as="sourcePoint" />
+            <mxPoint x="920" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6szxlBy-H3JRrQPXt5Hy-13" edge="1" parent="1" style="endArrow=none;html=1;strokeWidth=1;rounded=0;" value="">
+          <mxGeometry relative="1" width="100" as="geometry">
+            <mxPoint x="880" y="420" as="sourcePoint" />
+            <mxPoint x="880" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
