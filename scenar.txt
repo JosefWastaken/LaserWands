@@ -1,0 +1,75 @@
+1. Slide
+Dobrý den,
+kouzla existují jen jsme pro to neměli správný hardware.
+Jmenuji se Josef Strachoň a rád bych vám představil svou ročníkovou práci, která se zabývá vytvořením vlastního laser gamu.
+
+2. Slide
+Projekt vznikl z mého dlouhodobého zájmu o elektroniku a hry
+Chtěl jsem vytvořit hru, která není jen softwarová, ale je přímo propojená s vlastním hardwarem.
+
+3. Slide
+Projekt v současném stavu zajišťuje základní funkce potřebné pro ovládání hry.
+Momentálně snímám orientaci hůlky po své ose tak i vůči severu
+
+4. Slide
+Data o orientaci zpracovávám v řídící jednotce ESP32, kde data vyhodnocuji a posílám na server
+
+5. Slide
+Po vyhodnocení dat okamžitě dávám hráči zpětnou vazbu pomocí modulů na hůlce
+O modulech na hůlce povím později v této prezentaci
+
+6. Slide
+Zde můžeme vidět velice zjednodušenou architekturu řešení
+Moduly na hůlce pošlou data do řídící jednotky a ta dá zpětnou vazbu hráči
+
+7. Slide
+Zde je seznam použitého hardwaru
+ESP32-C6 – řídicí a komunikační jednotka
+IMU senzor – snímání rotace a zrychlení
+Magnetometr – určení orientace vůči severu
+Digitální dotykový senzor – uživatelský vstup
+Laser – vizuální zpětná vazba
+RGB LED dioda – stavová zpětná vazba
+PWM MOSFET modul – spínání výkonových prvků
+Vibrační motor – haptická zpětná vazba
+Nabíječka TP4056 s ochranou – řízení nabíjení baterie
+Li-ion článek 18650 – napájení zařízení
+
+8. Slide
+Nejdůležitější část projektu je samotná hůlka kterou jsem sestavil
+Vývoj mi zabral značné množství času, ale výsledkem je funkční prototyp, na kterém lze demonstrovat celé řešení.
+Sám vývoj mě toho spoustu naučil v oblasti spojení hardwaru a softwaru
+
+9. Slide
+Žádný projekt se neobejde bez výzev a že tenhle projekt jich měl spoustu
+Ale jak jedem moudrý muž řekl "Neúspěch je klíčem k úspěchu. Každá chyba nás něčemu naučí" tak jsem se nevzdal a pracoval dál
+Mezi hlavní patří
+Stabilita napájení - Nemám tak velké zkušenosti a často byl problém se zapojením a pájením
+
+10. Slide
+Komunikace mezi moduly
+Často jsem se potkal s problémem že moduly nekomunikovaly tak jak měli
+
+11. Slide
+Zpracování pohybu
+I dnes nemám nejpřesnější snímání pohybu a mám výchylky jak později uvidíte
+
+12. Slide
+Projekt mi toho velice přinesl
+Funkční prototyp který jsem vytvořil
+Dobrý pocit ze splněných cílů
+Zkušenosti s návrhem a zapojením mnou vytvořeným návrhem
+Propojení myšlenky a reality
+
+13. Slide
+V projektu chci dále pracovat
+Určitě chci z prototypu udělat finální produktovou verzi
+Dokončení zbývajících cílů projektu
+Vytvořit herní módy
+Navrhnout a nechat si vyrobit vlastní PCB desku
+
+Mezi 13. a 14. slidem
+Nyní vám krátce ukážu reálný výstup z tohoto prototypu.
+
+14. Slide
+Děkuji vám za vaši pozornost a nyní vám dávám prostor pro dotazy
