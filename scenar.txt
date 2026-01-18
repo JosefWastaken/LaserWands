@@ -1,28 +1,31 @@
-1. Slide
 Dobrý den,
 kouzla existují jen jsme pro to neměli správný hardware.
 Jmenuji se Josef Strachoň a rád bych vám představil svou ročníkovou práci, která se zabývá vytvořením vlastního laser gamu.
 
-2. Slide
+Než se dostanu k samotnému řešení, krátce vysvětlím, proč jsem si tento projekt vybral
+
+
 Projekt vznikl z mého dlouhodobého zájmu o elektroniku a hry
-Chtěl jsem vytvořit hru, která není jen softwarová, ale je přímo propojená s vlastním hardwarem.
+Chtěl jsem vytvořit hru, která není jen softwarová, ale je přímo propojená s VLASTNÍM hardwarem.
 
-3. Slide
+
 Projekt v současném stavu zajišťuje základní funkce potřebné pro ovládání hry.
-Momentálně snímám orientaci hůlky po své ose tak i vůči severu
+Momentálně snímám orientaci hůlky jak po své ose tak i vůči severu
 
-4. Slide
+
 Data o orientaci zpracovávám v řídící jednotce ESP32, kde data vyhodnocuji a posílám na server
 
-5. Slide
-Po vyhodnocení dat okamžitě dávám hráči zpětnou vazbu pomocí modulů na hůlce
-O modulech na hůlce povím později v této prezentaci
 
-6. Slide
+Po vyhodnocení dat okamžitě dávám hráči zpětnou vazbu pomocí modulů na hůlce
+O těch vám povím později v této prezentaci
+
+
 Zde můžeme vidět velice zjednodušenou architekturu řešení
 Moduly na hůlce pošlou data do řídící jednotky a ta dá zpětnou vazbu hráči
 
-7. Slide
+Tedy znovu nejdřív vznikají data na hůlce která se pošlou do ESP32 kde dochází ke zpracování dat. Po zpracování dat se pošlou na server a zároveň se dá zpětná vazba hráči.
+
+
 Zde je seznam použitého hardwaru
 ESP32-C6 – řídicí a komunikační jednotka
 IMU senzor – snímání rotace a zrychlení
@@ -31,45 +34,74 @@ Digitální dotykový senzor – uživatelský vstup
 Laser – vizuální zpětná vazba
 RGB LED dioda – stavová zpětná vazba
 PWM MOSFET modul – spínání výkonových prvků
-Vibrační motor – haptická zpětná vazba
-Nabíječka TP4056 s ochranou – řízení nabíjení baterie
+Vibrační motor – haptická zpětná vazba – Ten je momentálně vypnutý z důvodu ochrany pinů ESP32-C6
+Nabíječka TP4056 s ochranou – řízení nabíjení článku
 Li-ion článek 18650 – napájení zařízení
+Při výběru komponent jsem se snažil kombinovat dostupnost, cenu a funkčnost.
+Nešlo o nejdražší řešení, ale o takové, které dává smysl pro prototyp.
 
-8. Slide
+
 Nejdůležitější část projektu je samotná hůlka kterou jsem sestavil
 Vývoj mi zabral značné množství času, ale výsledkem je funkční prototyp, na kterém lze demonstrovat celé řešení.
-Sám vývoj mě toho spoustu naučil v oblasti spojení hardwaru a softwaru
+Sám vývoj mě toho spoustu naučil v oblasti spojení hardwaru a softwaru [PUST VIDEO)
 
-9. Slide
+Na videu můžete vidět zkoušku svítivosti LED diody a funkčnost laseru v tmavé chodbě
+
+
 Žádný projekt se neobejde bez výzev a že tenhle projekt jich měl spoustu
-Ale jak jedem moudrý muž řekl "Neúspěch je klíčem k úspěchu. Každá chyba nás něčemu naučí" tak jsem se nevzdal a pracoval dál
-Mezi hlavní patří
+Ale jak jedem moudrý muž řekl "Neúspěch je klíčem k úspěchu. Každá chyba nás něčemu naučí" a že každé mínus má své plus tak jsem se nevzdal a pracoval dál
+Mezi hlavní technické výzvy patří
 Stabilita napájení - Nemám tak velké zkušenosti a často byl problém se zapojením a pájením
+Tato výzva mě naučila lépe pájet a hledat tzv. „Studené spoje“
 
-10. Slide
+
 Komunikace mezi moduly
 Často jsem se potkal s problémem že moduly nekomunikovaly tak jak měli
+Nejčastěji tato výzva vznikla nepatrnou chybou pájení
 
-11. Slide
+
 Zpracování pohybu
-I dnes nemám nejpřesnější snímání pohybu a mám výchylky jak později uvidíte
+I dnes nemám nejpřesnější snímání pohybu a mám výchylky jak později sami uvidíte
+Tady výzva vzniká způsobem zpracování dat – Používám tzv. komplementární filtr který není tak perfektní jako Kálmánův filtr
+Komplementární filtr je metoda spojením dat z různých senzorů (v mém případě IMU a Magnetometr) a dochází k odhadu orientace
 
-12. Slide
+
 Projekt mi toho velice přinesl
 Funkční prototyp který jsem vytvořil
 Dobrý pocit ze splněných cílů
-Zkušenosti s návrhem a zapojením mnou vytvořeným návrhem
+Zkušenosti se zapojením mnou vytvořeným návrhem
 Propojení myšlenky a reality
+Pro mě osobně nebyl přínos jen výsledek, ale celý proces.
 
-13. Slide
-V projektu chci dále pracovat
+
+V projektu chci dále pokračovat
 Určitě chci z prototypu udělat finální produktovou verzi
-Dokončení zbývajících cílů projektu
+Dokončit zbývající cíle projektu
 Vytvořit herní módy
 Navrhnout a nechat si vyrobit vlastní PCB desku
 
-Mezi 13. a 14. slidem
+
+Ale zatím nevím všechno..znám relativní orientaci ale neznám pozici
+Moje řešení funguje skvěle ale pouze když je hráč na místě. To ale ztrácí schopnost být laser game
+Naštěstí je tady technologie UWB
+UWB je zkratka pro Ultra-Wideband
+Jedná se o bezdrátovou technologii pro krátký dosah s centimetrovou přesností (Krátkým dosahem se bavíme o místnosti)
+Funguje na styl 2 typů zařízení
+ANCHOR a TAG
+Anchory se baví mezi sebou a zjišťují zda fungují
+Pak přijde TAG a zeptá se nejbližších zda ho vidí a podle odezvy se vypočítá vzdálenost
+Anchory musí být staticky nastaveny softwarově i v místnosti
+
+
+Součástí projektu je také kalibrace magnetometru.
+Během kalibrace zařízení sbírá minimální a maximální hodnoty magnetického pole ve všech osách.
+Uživatel během této fáze pohybuje hůlkou v prostoru, čímž se postupně zpřesňuje výpočet orientace vůči severu.
+Kalibrace může skončit buď časovým limitem, nebo uživatelským vstupem.
+
+
 Nyní vám krátce ukážu reálný výstup z tohoto prototypu.
 
-14. Slide
+Pokud by měl někdo z poroty zájem, můžu hůlku krátce předat k vyzkoušení
+
+
 Děkuji vám za vaši pozornost a nyní vám dávám prostor pro dotazy
